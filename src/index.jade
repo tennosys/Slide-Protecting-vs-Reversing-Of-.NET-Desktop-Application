@@ -1,0 +1,127 @@
+mixin slide(names, slideClasses)
+  if names
+    section(class=names+' '+slideClasses, data-bespoke-backdrop='backdrop ' + names.split(' ').map(function(name) { return 'backdrop--' + name; }).join(' '))
+      block
+  else
+    section
+      block
+
+doctype html
+html
+  head
+  meta(charset='utf-8')
+  meta(name='viewport', content='width=device-width, initial-scale=1, maximum-scale=1')
+  title Protecting vs Reversing &mdash; Of .NET Desktop Application
+
+  link(rel='stylesheet', type='text/css', href='build/build.css')
+
+  body
+
+    article
+
+      +slide
+        img.avatar(src='images/profile.jpg')
+        h4 @tenosiswono
+
+      +slide('orion')
+        h1 Protecting <br />vs<br />Reversing
+
+      +slide
+        h3 of
+        h2 .NET Desktop Application
+
+      +slide
+        h2 { }
+
+      +slide
+        h2 { protected: true }
+
+      +slide
+        h2.single-words No idea it secured
+
+      +slide('schneier')
+        h3(style='width:490px') &ldquo;If you think technology can solve your security problems, then you don't understand the problems and you don't understand the technology.&rdquo; 
+        h4 &mdash; Bruce Schneier (Cryptographer) &mdash;
+
+      +slide
+        h2.bullet Solution?
+        h3.bullet Make it Hard to Reversed
+
+      +slide
+        h2.bullet Packing
+        h3.bullet Virtualized packer
+        h3.bullet Pack your .NET executable into Virtualizer.
+
+      +slide
+        h3.bullet VMProtect
+        h3.bullet Themida
+
+      +slide
+        h2.bullet Obfuscate
+        h3.bullet Obfuscate your code
+
+      +slide
+        h3.bullet Agile.NET
+        h3.bullet Eazfuscator.NET
+        h3.bullet Dotfuscator
+
+      +slide
+        h2.bullet Asymmetric Encryption
+        h3.bullet To generate your product licenses.
+        h3.bullet Only you can generate your license codes.
+        h3.bullet Impossible to reverse the key generating algorithm.
+
+      +slide
+        h3.bullet Public-Private Key Cryptography
+        h3.bullet Digital Signature Algorithm
+
+      +slide
+        h2.bullet Strong Name
+        h3.bullet Ensure that when you load a DLL you get exactly the DLL you were expecting and not some other DLL that happens to have the same name.
+
+      +slide
+        h2.bullet Anti-debugging
+        h3.bullet Protect against a managed debugger or a native debugger
+
+      +slide
+        h2.bullet Anti-dumping
+        h3.bullet Prevent from capturing/dumping the state of the executable at a particular point in time.
+
+      +slide
+        h2 { }
+
+      +slide
+        h2 { protected: false }
+
+      +slide('darkside')
+        h2 Join the Dark Side
+
+      +slide
+        h2.bullet Reverse Engineering
+        h3.bullet Process for discovering the technological principles of a human made device, object or system through the analysis of its structure, function and operation.
+
+      +slide
+        h2.single-words How to learn
+
+      +slide
+        h2.bullet Understanding PE structure
+        h3.bullet The PE format is a data structure that encapsulates the information necessary for the Windows OS loader to manage the wrapped executable code.
+
+      +slide('peformat')
+
+      +slide
+        img.bullet(src='images/tldr.gif')
+
+       
+      +slide
+        a(href='https://github.com/markdalgleish/presentation-a-state-of-change-object-observe/blob/master/REFERENCES.md')
+          h2 References
+
+      +slide
+        img.avatar(src='images/profile.jpg')
+        br
+        h2 Thanks
+        a(href='http://bit.ly/astateofchange', style='border:none')
+          h3 bit.ly/astateofchange
+
+    script(src='build/build.js')
